@@ -11,7 +11,7 @@ contract Tracking {
         address receiver;      // آدرس گیرنده ولت
         uint256 pickupTime;    // زمان سوار کردن
         uint256 deliveryTime;  // زمان تحویل 
-        uint256 dictance;      // فاصله 
+        uint256 distance;      // فاصله 
         uint256 price;         // قیمت حمل و نقل 
         ShipmentStatus status; // وضعیت حمل و نقل که سه حالت قبل بارگیری و در حال حمل و تحویل داده شده است
         bool isPaid;           // تایید تراکنش 
@@ -146,5 +146,11 @@ contract Tracking {
     function getShipmentCount(address _sender) public view returns(uint256){
         return shipments[_sender].length;
     }
+
+    function getAllTransaction () public view returns(TypeShipment[] memory){
+        return typeShipments;
+    }
+
+    
 
 }
