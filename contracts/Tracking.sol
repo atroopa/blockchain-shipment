@@ -92,6 +92,46 @@ contract Tracking {
                          );
     }
 
-    
+    function startShipment (address _sender, address _receiver , uint256 _index) public {
+        
+        Shipment     storage shipment     = shipments [_sender][_index];
+        TypeShipment storage typeShipment = typeShipments [_index];
+
+        require(shipment.receiver == _receiver , "Invalid receiver.");
+        require(shipment.status   == ShipmentStatus.PENDING , "Shipment already to transit.");
+
+        shipment.status     = ShipmentStatus.IN_TRANSITE;
+        typeShipment.status = ShipmentStatus.IN_TRANSITE;
+
+        emit ShipmentInTransit(_sender, _receiver, shipment.pickupTime);
+    }
+
+    function compeleteShipmnet(address _sender , address _receiver, uint256 _index) public payable {
+        
+        Shipment     storage shipment     = shipments[_sender][_index];
+        TypeShipment storage typeShipment = typeShipments [_index];
+
+        require(shipment.receiver == _receiver , "Invalid receiver.");
+        require(shipment.status   == ShipmentStatus.IN_TRANSITE , "Shipment Not in transit.");
+        require(!shipment.isPaid , "Shipment Already to Paid");
+
+        shipment.status     =  ShipmentStatus.DELIVERED;
+        typeShipment.status =  ShipmentStatus.DELIVERED;
+
+        typeShipment.deliveryTime = block.timestamp;
+        shipment.deliveryTime     = block.timestamp;
+
+        uint256 amount = shipment.price;
+        payable(shipment.sender).transfer(amount);
+
+        shipment.isPaid     = true;
+        typeShipment.isPaid = true;
+
+        emit ShipmentDelivered(_sender, _receiver, shipment.deliveryTime);
+        emit ShipmentPaid(_sender, _receiver, amount);
+
+    }
+
+
 
 }
