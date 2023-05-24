@@ -60,14 +60,38 @@ contract Tracking {
     }
 
     function createShipment(address _receiver, uint256 _pickupTime, uint256 _distance 
-    ,uint256 _price) public  payable{
+    ,uint256 _price) public  payable {
         require(msg.value == _price , "Payment Amount Most Match the Price.");
         
         Shipment memory shipment = Shipment(msg.sender ,_receiver ,_pickupTime, 0, _distance, _price, ShipmentStatus.PENDING, false );
         // shipment در اصل یک آرایه است که ریخته می شود درون دیکشنری به نام 
         // به نام shipments منظور از دیکشنری همان mapping است 
         shipments[msg.sender].push(shipment);
-        
+
+        shipmentCount++;
+
+        typeShipments.push(
+            TypeShipment(
+                msg.sender,
+                _receiver,
+                _pickupTime,
+                0,
+                _distance,
+                _price,
+                ShipmentStatus.PENDING,
+                false
+            )
+
+        );
+
+        emit ShipmentCreated(msg.sender, 
+                          _receiver, 
+                          _pickupTime , 
+                          _distance, 
+                          _price
+                         );
     }
+
+    
 
 }
