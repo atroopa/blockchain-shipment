@@ -1,10 +1,11 @@
-import React ,{useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
+import React from 'react';
 import Web3Modal from 'web3modal';
 import {ethers}  from 'ethers';
 
 
 // INTERNAL IMPORT
-import tracking       from "./context/Tracking.json";
+import tracking       from "../context/Tracking.json";
 const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 const contractAbi     = tracking.abi;
 
@@ -22,7 +23,7 @@ export const TrackingProvider = ({childeren}) => {
     const DappName                      = "Product Tracking Dapp";
     const [currentUser, setCurrentUser] = useState("");
 
-    const creteShipment = async items => {
+    const createShipment = async items => {
         console.log(items);
         const {receiver, pickupTime, distance , price} = items;
 
@@ -225,7 +226,7 @@ export const TrackingProvider = ({childeren}) => {
     } , []);
 
         return (
-            <TrackingContext.provider 
+            <TrackingContext.Provider 
                 value={{
                     connectWallet,
                     createShipment,
@@ -239,7 +240,7 @@ export const TrackingProvider = ({childeren}) => {
                 }} >
                     {childeren}
 
-            </TrackingContext.provider>
+            </TrackingContext.Provider>
         );
 
 };
