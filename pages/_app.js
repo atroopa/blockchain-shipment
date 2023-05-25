@@ -1,18 +1,19 @@
 import '@/styles/globals.css'
 
 // INTERNAL IMPORTS
- import  {TrackingProvider} from '@/context/Tracking.js';
+//import  {TrackingProvider} from '../context/Tracking';
 import { Navbar, Footer } from '@/components';
+import { ThemeContextProvider } from '../context/ThemeContext'
 
 export default function App({ Component, pageProps }) {
   return (
-    <div>
-      <TrackingProvider>
+    <>
+      <ThemeContextProvider>
         <Navbar/>
         <Component {...pageProps} />
-      </TrackingProvider>
+        </ThemeContextProvider>
       <Footer/>
   
-    </div>
+    </>
   ) 
 }

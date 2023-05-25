@@ -1,5 +1,4 @@
-import {useState, useEffect} from 'react';
-import React from 'react';
+import { createContext, useContext, useState , useEffect} from "react";
 import Web3Modal from 'web3modal';
 import {ethers}  from 'ethers';
 
@@ -15,7 +14,7 @@ const fetchContract = (signerOrProvider) => {
     new ethers.Contract(contractAddress, contractAbi, signerOrProvider);
 }
 
-export const  TrackingContext = React.createContext();
+const  TrackingContext = createContext();
 
 export const TrackingProvider = ({childeren}) => {
     
@@ -239,9 +238,12 @@ export const TrackingProvider = ({childeren}) => {
                     currentUser
                 }} 
             >
+                
                     {childeren}
-
+                
             </TrackingContext.Provider>
         );
 
 };
+
+export const useThemeContext = () => useContext(TrackingContext);
