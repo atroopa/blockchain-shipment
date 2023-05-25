@@ -97,5 +97,34 @@ const getShipmentCount =  async () => {
 }
 
 const compeletShipment = async compeletShip => {
-    
-}
+    console.log("compeletShip: " , compeletShip);
+
+    const {receiver, index} = compeletShip;
+
+    try {
+        
+        if(!window.ethereum) return "Install MetaMask";
+
+        const accounts      = await window.ethereum.request({ method: "eth_accounts", });
+        const web3Modal     = new Web3Modal();
+        const connection    = await web3Modal.connect();
+        const provider      = new ethers.providers.Web3Provider(connection);
+        const signer        = provider.getSigner();
+        const contract      = fetchContract(signer);
+        const transaction   = await contract.compeletShipment(
+                                                                accounts[0],
+                                                                receiver,
+                                                                index,
+                                                                {
+                                                                    gasLimit: 30000
+                                                                }
+                                                            );
+
+
+        transaction.wait();
+        console.log("transaction: ", transaction);
+    } catch (error) {
+        console.error("Wrong compeleteShipment");
+    }
+
+};
