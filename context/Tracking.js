@@ -205,3 +205,38 @@ const checkIfWalletConnected = async () => {
     }
 
 };
+
+// CONNECT WALLET FUNCTION 
+const connectWallet = async () => {
+    try {
+        
+        if(!window.ethereum) return "install MetaMask";
+        const accounts       = await window.ethereum.request({ method: "eth_accounts", });
+        setCurrentUser(accounts[0]);
+
+    } catch (error) {
+        return "Connecting has an error "
+    }
+};
+
+useEffect(() => {
+    checkIfWalletConnected();
+} , []);
+
+return (
+    <TrackingContext.provider 
+        value={{
+            connectWallet,
+            createShipment,
+            getAllShipment,
+            compeletShipment,
+            getShipment,
+            startShipment,
+            getShipmentCount,
+            DappName,
+            currentUser
+        }} >
+            {childeren}
+
+    </TrackingContext.provider>
+);
