@@ -128,3 +128,33 @@ const compeletShipment = async compeletShip => {
     }
 
 };
+
+const getShipment = async index => {
+    console.log(index * 1);
+
+    try {
+        
+        if(!window.ethereum) return "please Install MetaMask";
+
+        const accounts       = await window.ethereum.request({ method: "eth_accounts", });
+        const provider       = new ethers.providers.JsonRpcProvider();
+        const contract       = fetchContract(provider);
+        const shipment       = contract.getShipment(accounts[0], index * 1);
+        const singleShiplent = {
+            sender      : shipment[0],
+            receiver    : shipment[1],
+            pickupTime  : shipment[2].toNumber(),
+            deliveryTime: shipment[3].toNumber(),
+            distance    : shipment[4].toNumber(),
+            price       : ethers.utils.formatEther(shipment[5].toString()),
+            status      : shipment[6],
+            isPaid      : shipment[7]
+        }
+
+        return singleShiplent;
+
+    } catch (error) {
+        console.error("Sorry no Shipment");
+    }
+
+};
