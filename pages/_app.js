@@ -11,6 +11,7 @@ export default function App({ Component, pageProps }) {
         <Navbar/>
         <Component {...pageProps} />
       </TrackingProvider>
+      <Footer/>
   
     </div>
   ) 

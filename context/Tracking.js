@@ -237,7 +237,8 @@ export const TrackingProvider = ({childeren}) => {
                     getShipmentCount,
                     DappName,
                     currentUser
-                }} >
+                }} 
+            >
                     {childeren}
 
             </TrackingContext.Provider>
