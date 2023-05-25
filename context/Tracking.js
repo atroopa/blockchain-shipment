@@ -78,3 +78,24 @@ const getAllShipment = async () => {
     }
 };
 
+const getShipmentCount =  async () => {
+
+    try {
+        
+        if (!window.ethereum) return "Install MetaMask";
+
+        const accounts      = await window.ethereum.request({ method: "eth_accounts", });
+        const provider      = new ethers.providers.JsonRpcProvider();
+        const contract      = fetchContract(provider);
+        const shipmentCount = contract.getShipmentCount(accounts[0]);
+        return shipmentCount.toNumber();
+
+    } catch (error) {
+        console.error("error wnat , getting shipmentCount");
+    }
+
+}
+
+const compeletShipment = async compeletShip => {
+    
+}
