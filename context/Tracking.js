@@ -188,3 +188,20 @@ const startShipment = async getProduct => {
 };
 
 // CHEACK WALLET CONNECTION 
+const checkIfWalletConnected = async () => {
+
+    try {
+        
+        if(!window.ethereum) return "install MetaMask";
+        const accounts       = await window.ethereum.request({ method: "eth_accounts", });
+        if(accounts.length){
+            setCurrentUser(accounts[0]);
+        } else {
+            return "No account";
+        }
+
+    } catch (error) {
+        return "Not Connected";
+    }
+
+};
