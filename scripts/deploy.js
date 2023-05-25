@@ -4,12 +4,12 @@ const hre = require("hardhat");
 async function main() {
 
   const Tracking = await hre.ethers.getContractFactory("Tracking");
-  const Tracking = await Tracking.deploy();
+  const tracking = await Tracking.deploy();
 
-  await lock.deployed();
+  await tracking.deployed();
 
   console.log(
-    `Tracking deployed to ${Tracking.address}`
+    `Tracking deployed to ${tracking.address}`
   );
 }
 
