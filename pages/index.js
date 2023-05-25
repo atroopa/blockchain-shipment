@@ -1,9 +1,34 @@
-import React from 'react';
+import React , {useState, useEffect, useContext}from 'react';
+
+// INTERNAL IMPORT
+import {
+  Table,
+  Form,
+  Services,
+  Profile,
+  CompeletShipment,
+  GetShipment,
+  StartShipment
+  
+} from "@/components"
+
+import {Trackin} from "../context/Tracking"
 
 const index = () => {
+
+  const {
+    currentUser,
+    createShipment,
+    getAllShipment,
+    compeletShipment,
+    getShipment,
+    startShipment,
+    getShiomentCount
+  } = useContext(Tracking);
+
   return (
     <div>
-      index asdsadasda
+      index 
     </div>
   );
 };
