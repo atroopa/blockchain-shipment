@@ -158,3 +158,32 @@ const getShipment = async index => {
     }
 
 };
+
+const startShipment = async getProduct => {
+    const {receiver, index} = getProduct;
+
+    try {
+        
+        if(!window.ethereum) return "install MetaMask";
+
+        const accounts       = await window.ethereum.request({ method: "eth_accounts", });
+        const web3Modal      = new Web3Modal();
+        const connection     = await web3Modal.connect();
+        const provider       = new ethers.providers.Web3Provider(connection);
+        const signer         = provider.getSigner();
+        const contract       = fetchContract(signer);
+        const shipment       = await contract.startShipment(
+                                                            accounts[0],
+                                                            receiver,
+                                                            index * 1,
+                                                        );
+
+        shipment.wait();
+        console.log("start Shipment: ", shipment);
+
+    } catch (error) {
+        console.error("Sorry no Shipment for start", error);
+    }
+
+};
+
