@@ -1,8 +1,8 @@
 import {useEffect, useState, useContext} from 'react';
-import {ThemeContext} from "@/context/Tracking";
+import {ThemeContext}       from "@/context/Tracking";
 import { Nav1, Nav2, Nav3 } from '@/components';
-import Image from 'next/image';
-import Shiping from '../shiping.png';
+import Image                from 'next/image';
+import Shiping              from '../shiping.png';
 
 const Navbar = () => {
 
@@ -16,7 +16,7 @@ const Navbar = () => {
     {title: "خانه"     , path: "#"}
   ];
 
-  console.log(currentUser)
+  console.log("state: ", state)
 
   useEffect(() => {
     document.onClick = (e) => {
