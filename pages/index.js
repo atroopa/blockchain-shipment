@@ -30,7 +30,7 @@ const index = () => {
   // STATE VARIABLE
   const [createShipmentModel, setCreateShipmentModel] = useState(false);
   const [openProfile , setOpenProfile]                = useState(false);
-  const [startModel, setStartModel]                   = useState(false);
+  const [startModal, setStartModal]                   = useState(false);
   const [compeleteModel, setCompeleteModel]           = useState(false);
   const [getModel, setGetModel]                       = useState(false);
 
@@ -52,7 +52,7 @@ const index = () => {
         setOpenProfile    = {setOpenProfile}
         setCompeleteModel = {setCompeleteModel}
         setGetModel       = {setGetModel}
-        setStartModel     = {startModel}
+        setStartModel     = {startModal}
       />
 
       <Table
@@ -84,7 +84,11 @@ const index = () => {
         getShipment = {getShipment}
       />
 
-      
+      <StartShipment
+        startModal    = {startModal}
+        setStartModal = {setStartModal}
+        startShipment = {startShipment}
+      />
 
     </div>
   );
