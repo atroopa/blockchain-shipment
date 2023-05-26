@@ -12,19 +12,34 @@ import {
   
 } from "@/components"
 
-import {Tracking} from "../context/Tracking"
+import {ThemeContext} from "../context/Tracking"
+
+
 
 const index = () => {
-
   const {
-    currentUser,
     createShipment,
     getAllShipment,
     compeletShipment,
     getShipment,
     startShipment,
-    getShiomentCount
-  } = useContext(Tracking);
+    getShiomentCount,
+    currentUser,
+  } = useContext(ThemeContext);
+  
+  // STATE VARIABLE
+  const [createShipmentModel, setCreateShipmentModel] = useState(false);
+  const [openProfile , setOpenProfile]                = useState(false);
+  const [startModel, setStartModel]                   = useState(false);
+  const [compeleteModel, setCompeleteModel]           = useState(false);
+  const [getModel, setGetModel]                       = useState(false);
+
+  // DATA SET VARIABLE
+  const [allShipmentsData, setAllShipmentData]        = useState(false);
+
+  useEffect(() => {
+    const getCampaignsData = getAllShipment();
+  });
 
   return (
     <div>
