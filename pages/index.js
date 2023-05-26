@@ -78,6 +78,12 @@ const index = () => {
         compeletShipment  = {compeletShipment}
       />
 
+      <GetShipment
+        getModel    = {getModel}
+        setGetModel = {setGetModel}
+        getShipment = {getShipment}
+      />
+
       
 
     </div>
