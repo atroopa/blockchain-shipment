@@ -15,13 +15,11 @@ const Navbar = () => {
     {title: "سرویس ها", path: "#"},
     {title: "خانه"     , path: "#"}
   ];
-//Home
-//Services
-// Contactus
-// Erc20
+
+  console.log(currentUser)
 
   useEffect(() => {
-    document.onclick = (e) => {
+    document.onClick = (e) => {
       const target = e.target;
       if(!target.closest(".menu-btn")) setState(false);
     };
@@ -39,15 +37,15 @@ const Navbar = () => {
       <div className='gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8 '>
         <div className='flex items-center justify-between py-5 md:block'>
 
-          <a href='javascript:void(0)' >
-            <Image src={Shiping} width={120} height={50} />
+          <a href="#">
+            <Image src={Shiping} width={120} height={50} alt="shiping logo"/>
           </a>
 
           <div className='md:hide'>
             <button className='menu-btn text-gray-500 hover:text-gray-800'
-              onclick={() => {setState(!state)}}      
+              onClick={() => {setState(!state)}}      
             >
-              {state ? Nav1 : Nav2}
+              {state ? <Nav1/> : <Nav2/>}
             </button>
           </div>
         </div>
@@ -70,7 +68,7 @@ const Navbar = () => {
               currentUser ? (
                 <p className='flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex'>{currentUser.slice(0,25)}</p>
               ) : (
-                <button onclick={() => connectWallet()} className='flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex'>Connect Wallet <Nav3/> </button>
+                <button onClick={() => connectWallet()} className='flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex'>Connect Wallet <Nav3/> </button>
               )
             }
           </div>

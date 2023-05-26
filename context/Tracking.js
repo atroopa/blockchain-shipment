@@ -78,7 +78,7 @@ export const TrackingProvider = ({ children }) => {
                 return allShipments;
     
             } catch (error) {
-                console.error("error want, getting shipment");
+                console.error("from getAllShipment func : error want, getting shipment");
             }
         };
     
@@ -208,6 +208,7 @@ export const TrackingProvider = ({ children }) => {
             
             if(!window.ethereum) return "install MetaMask";
             const accounts       = await window.ethereum.request({ method: "eth_accounts", });
+            console.log("from connectWallet func", accounts[0]);
             if(accounts.length){
                 setCurrentUser(accounts[0]);
             } else {
@@ -227,6 +228,7 @@ export const TrackingProvider = ({ children }) => {
             
             if(!window.ethereum) return "install MetaMask";
             const accounts       = await window.ethereum.request({ method: "eth_accounts", });
+            
             setCurrentUser(accounts[0]);
 
         } catch (error) {
