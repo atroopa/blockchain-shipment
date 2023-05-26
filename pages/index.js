@@ -10,9 +10,9 @@ import {
   GetShipment,
   StartShipment
   
-} from "@/components"
+} from "@/components";
 
-import {ThemeContext} from "../context/Tracking"
+import {ThemeContext} from "@/context/Tracking";
 
 
 
@@ -89,8 +89,6 @@ const index = () => {
         setStartModal = {setStartModal}
         startShipment = {startShipment}
       />
-
-      
 
     </div>
   );
