@@ -23,7 +23,7 @@ const index = () => {
     compeletShipment,
     getShipment,
     startShipment,
-    getShiomentCount,
+    getShipmentCount,
     currentUser,
   } = useContext(ThemeContext);
   
@@ -53,7 +53,33 @@ const index = () => {
         setCompeleteModel = {setCompeleteModel}
         setGetModel       = {setGetModel}
         setStartModel     = {startModel}
-      /> 
+      />
+
+      <Table
+        setCreateShipmentModel = {setCreateShipmentModel}
+        allShipmentsData       = {allShipmentsData}
+      />
+
+      <Form 
+        createShipmentModel    = {createShipmentModel}
+        createShipment         = {createShipment}
+        setCreateShipmentModel = {setCreateShipmentModel}
+      />
+      <Profile
+        openProfile      = {openProfile}
+        setOpenProfile   = {setOpenProfile}
+        currentUser      = {currentUser }
+        getShipmentCount = {getShipmentCount}
+      />
+
+      <CompeletShipment
+        compeleteModel    = {compeleteModel}
+        setCompeleteModel = {setCompeleteModel}
+        compeletShipment  = {compeletShipment}
+      />
+
+      
+
     </div>
   );
 };
