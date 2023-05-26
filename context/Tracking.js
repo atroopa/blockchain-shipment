@@ -10,8 +10,6 @@ const fetchContract = (signerOrProvider) => {
    return new ethers.Contract(Blockchain.contractAddress, Blockchain.contractAbi, signerOrProvider);
 }
 
-
-
 export const ThemeContext = createContext({});
 
 export const TrackingProvider = ({ children }) => {
@@ -197,17 +195,22 @@ export const TrackingProvider = ({ children }) => {
 
 
     // CHEACK WALLET CONNECTION 
+
+
+
     const checkIfWalletConnected = async () => {
+
+
 
         try {
             
             if(!window.ethereum) return "install MetaMask";
-            const accounts       = await window.ethereum.request({ method: "eth_accounts", });
-            console.log("from connectWallet func", accounts[0]);
-            if(accounts.length){
+            const accounts = await window.ethereum.request({ method: "eth_accounts" });
+            if(accounts.length > 0 ){
                 setCurrentUser(accounts[0]);
+                console.log("true")
             } else {
-                return "No account";
+                console.log("No account");
             }
 
         } catch (error) {
@@ -222,7 +225,8 @@ export const TrackingProvider = ({ children }) => {
         try {
             
             if(!window.ethereum) return "install MetaMask";
-            const accounts       = await window.ethereum.request({ method: "eth_accounts", });
+
+            const accounts       = await window.ethereum.request({ method: "eth_requestAccounts"});
             
             setCurrentUser(accounts[0]);
 
