@@ -2,17 +2,12 @@
 import { createContext, useContext, useState , useEffect} from "react";
 import Web3Modal from 'web3modal';
 import {ethers}  from 'ethers';
-
-
-// INTERNAL IMPORT
-import tracking       from "../context/Tracking.json";
-const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-const contractAbi     = tracking;
+import * as Blockchain from '../utils/config';
 
 
 // FETCHING SMART CONTRACT 
 const fetchContract = (signerOrProvider) => {
-    new ethers.Contract(contractAddress, contractAbi, signerOrProvider);
+   return new ethers.Contract(Blockchain.contractAddress, Blockchain.contractAbi, signerOrProvider);
 }
 
 
@@ -60,7 +55,7 @@ export const TrackingProvider = ({ children }) => {
         const getAllShipment = async () => {
             try {
                 
-                const provider     = new ethers.providers.JsonRpcProvider()
+                const provider     = new ethers.providers.JsonRpcProvider(Blockchain.API_URL)
                 const contract     = fetchContract(provider);
                 const shipments    = await contract.getAllTransaction();
                 const allShipments = shipments.map( (shipment) => ({
@@ -90,7 +85,7 @@ export const TrackingProvider = ({ children }) => {
                 if (!window.ethereum) return "Install MetaMask";
     
                 const accounts      = await window.ethereum.request({ method: "eth_accounts", });
-                const provider      = new ethers.providers.JsonRpcProvider();
+                const provider      = new ethers.providers.JsonRpcProvider(Blockchain.API_URL);
                 const contract      = fetchContract(provider);
                 const shipmentCount = contract.getShipmentCount(accounts[0]);
                 return shipmentCount.toNumber();
@@ -146,7 +141,7 @@ export const TrackingProvider = ({ children }) => {
                 if(!window.ethereum) return "please Install MetaMask";
     
                 const accounts       = await window.ethereum.request({ method: "eth_accounts", });
-                const provider       = new ethers.providers.JsonRpcProvider();
+                const provider       = new ethers.providers.JsonRpcProvider(Blockchain.API_URL);
                 const contract       = fetchContract(provider);
                 const shipment       = contract.getShipment(accounts[0], index * 1);
                 const singleShiplent = {
