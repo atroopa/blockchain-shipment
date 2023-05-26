@@ -17,7 +17,7 @@ const fetchContract = (signerOrProvider) => {
 
 
 
-const ThemeContext = createContext({})
+const ThemeContext = createContext({});
 
 export const TrackingProvider = ({ children }) => {
         // STATE VARIABLES

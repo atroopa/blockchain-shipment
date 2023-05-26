@@ -12,7 +12,7 @@ import {
   
 } from "@/components"
 
-import {Trackin} from "../context/Tracking"
+import {Tracking} from "../context/Tracking"
 
 const index = () => {
 
