@@ -39,11 +39,21 @@ const index = () => {
 
   useEffect(() => {
     const getCampaignsData = getAllShipment();
-  });
+
+    return async () => {
+      const allData = await getCampaignsData;
+      setAllShipmentData(allData);
+    };
+  }, []);
 
   return (
     <div>
-      index 
+      <Services
+        setOpenProfile    = {setOpenProfile}
+        setCompeleteModel = {setCompeleteModel}
+        setGetModel       = {setGetModel}
+        setStartModel     = {startModel}
+      /> 
     </div>
   );
 };
