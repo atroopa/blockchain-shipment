@@ -196,39 +196,35 @@ export const TrackingProvider = ({ children }) => {
 
     // CHEACK WALLET CONNECTION 
     const checkIfWalletConnected = async () => {
-
-
-
         try {
-            
-            if(!window.ethereum) return "install MetaMask";
-            const accounts = await window.ethereum.request({ method: "eth_accounts" });
-            if(accounts.length > 0 ){
-                setCurrentUser(accounts[0]);
-                console.log("true")
+            if (!window.ethereum) return "Install MetaMask";
+            window.localStorage.clear();
+            const isConnected = !!window.ethereum.selectedAddress;
+            if (isConnected) {
+                setCurrentUser(window.ethereum.selectedAddress);
+                setWalletConnected(true); // تنظیم وضعیت walletConnected به true
+                console.log("Connected");
             } else {
                 console.log("No account");
             }
-
+    
         } catch (error) {
             return "Not Connected";
         }
-
     };
+    
 
 
-    // CONNECT WALLET FUNCTION 
     const connectWallet = async () => {
         try {
-            
-            if(!window.ethereum) return "install MetaMask";
-
-            const accounts       = await window.ethereum.request({ method: "eth_requestAccounts"});
-            
+            if (!window.ethereum) return "Install MetaMask";
+    
+            const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
             setCurrentUser(accounts[0]);
-
+            setWalletConnected(true); // تنظیم وضعیت walletConnected به true
+    
         } catch (error) {
-            return "Connecting has an error "
+            return "Connecting has an error";
         }
     };
 
