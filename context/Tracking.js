@@ -3,6 +3,7 @@ import { createContext, useContext, useState , useEffect} from "react";
 import Web3Modal from 'web3modal';
 import {ethers}  from 'ethers';
 import * as Blockchain from '../utils/config';
+import { useRainbowKit } from '@rainbow-me/rainbowkit';
 
 
 // FETCHING SMART CONTRACT 
@@ -228,9 +229,22 @@ export const TrackingProvider = ({ children }) => {
         }
     };
 
+    
+  
+    const handleConnect = async () => {
+        const { getSigner } = useRainbowKit();
+        try {
+        const signer = await getSigner();
+        const accounts = await signer.getAddress();
+  
+        setCurrentUser(accounts[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
     useEffect(() => {
-        checkIfWalletConnected();
+        //checkIfWalletConnected();
     }, []);
 
     return (
@@ -244,7 +258,9 @@ export const TrackingProvider = ({ children }) => {
             checkIfWalletConnected,
             connectWallet,
             DappName,
-            currentUser
+            currentUser,
+            handleConnect
+            
             }}>
             {children}
         </ThemeContext.Provider>

@@ -3,11 +3,12 @@ import {ThemeContext}       from "@/context/Tracking";
 import { Nav1, Nav2, Nav3 } from '@/components';
 import Image                from 'next/image';
 import Shiping              from '../shiping.png';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const Navbar = () => {
 
   const [state, setState] = useState(false);
-  const {currentUser , connectWallet} = useContext(ThemeContext);
+  const {currentUser, handleConnect } = useContext(ThemeContext);
 
   const navigation = [
     {title: "بلاکچین"      , path: "#"},
@@ -16,7 +17,9 @@ const Navbar = () => {
     {title: "خانه"     , path: "#"}
   ];
 
-  console.log("state: ", state)
+  function InnerApp({ Component, pageProps }) {
+
+  
 
   useEffect(() => {
     document.onClick = (e) => {
@@ -68,7 +71,7 @@ const Navbar = () => {
               currentUser ? (
                 <p className='flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex'>{currentUser.slice(0,25)}</p>
               ) : (
-                <button onClick={() => {connectWallet();}} className='flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex'>Connect Wallet <Nav3/> </button>
+                <ConnectButton onClick={handleConnect} /> 
               )
             }
           </div>
@@ -80,5 +83,5 @@ const Navbar = () => {
     </nav>
   );
 };
-
+}
 export default Navbar;

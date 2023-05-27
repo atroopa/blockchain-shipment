@@ -1,5 +1,5 @@
 import React , {useState, useEffect, useContext}from 'react';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 // INTERNAL IMPORT
 import {
   Table,
@@ -37,21 +37,19 @@ const index = () => {
   // DATA SET VARIABLE
   const [allShipmentsData, setAllShipmentData]        = useState(false);
 
-  // useEffect(() => {
-  //   const getCampaignsData = getAllShipment();
+  useEffect(() => {
+    const getCampaignsData = getAllShipment();
 
-  //   return async () => {
-  //     const allData = await getCampaignsData;
-  //     setAllShipmentData(allData);
-  //   };
-  // }, []);
+    return async () => {
+      const allData = await getCampaignsData;
+      setAllShipmentData(allData);
+    };
+  }, []);
 
   return (
     <div>
-    <div className="flex justify-end p-12">
-      <ConnectButton />
-    </div>
-      {/* <Services
+   
+      <Services
         setOpenProfile    = {setOpenProfile}
         setCompeleteModel = {setCompeleteModel}
         setGetModel       = {setGetModel}
@@ -91,7 +89,7 @@ const index = () => {
         startModal    = {startModal}
         setStartModal = {setStartModal}
         startShipment = {startShipment}
-      /> */}
+      />
 
     </div>
   );

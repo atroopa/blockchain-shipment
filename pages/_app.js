@@ -65,10 +65,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
-        {/* <TrackingProvider> */}
-          {/* <Navbar/> */}
+         <TrackingProvider> 
+           <Navbar/> 
           <Component {...pageProps} />
-        {/* </TrackingProvider> */}
+         </TrackingProvider> 
         <Footer />
       </RainbowKitProvider>
     </WagmiConfig>
