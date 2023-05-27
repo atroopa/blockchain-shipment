@@ -9,6 +9,8 @@ const Navbar = () => {
 
   const [state, setState] = useState(false);
   const {currentUser, handleConnect } = useContext(ThemeContext);
+  console.log(currentUser);
+
 
   const navigation = [
     {title: "بلاکچین"      , path: "#"},
@@ -16,8 +18,6 @@ const Navbar = () => {
     {title: "سرویس ها", path: "#"},
     {title: "خانه"     , path: "#"}
   ];
-
-  function InnerApp({ Component, pageProps }) {
 
   
 
@@ -83,5 +83,5 @@ const Navbar = () => {
     </nav>
   );
 };
-}
+
 export default Navbar;

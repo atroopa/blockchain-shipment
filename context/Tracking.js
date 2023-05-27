@@ -232,8 +232,9 @@ export const TrackingProvider = ({ children }) => {
     
   
     const handleConnect = async () => {
-        const { getSigner } = useRainbowKit();
+        const { getSigner, clearWalletCache } = useRainbowKit();
         try {
+        clearWalletCache();
         const signer = await getSigner();
         const accounts = await signer.getAddress();
   
