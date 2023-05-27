@@ -6,7 +6,7 @@ import * as Blockchain from '../utils/config';
 
 
 // FETCHING SMART CONTRACT 
-const fetchContract = (signerOrProvider) => {
+const fetchContract = signerOrProvider => {
    return new ethers.Contract(Blockchain.contractAddress, Blockchain.contractAbi, signerOrProvider);
 }
 
@@ -195,9 +195,6 @@ export const TrackingProvider = ({ children }) => {
 
 
     // CHEACK WALLET CONNECTION 
-
-
-
     const checkIfWalletConnected = async () => {
 
 
