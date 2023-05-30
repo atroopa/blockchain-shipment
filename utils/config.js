@@ -1,7 +1,7 @@
 export const API_URL = "http://127.0.0.1:7545";
 // 0x6dAE04565cE8033553Eb4916a2c1Bc90C7Bf839B
 //export const PRIVATE_KEY = "0x39cf0934d9e05f29e4c4270acb7164a608b965f55efe61f1fa49d53d590d0b18";
-export const contractAddress = "0x8cf5bA170EE0cBa235C243DDF5ba6524806a1C7B";
+export const contractAddress = "0xd9145CCE52D386f254917e481eB44e9943F39138";
 export const contractAbi = [
 	{
 		"inputs": [
