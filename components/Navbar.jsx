@@ -44,11 +44,11 @@ const Navbar = () => {
             <Image src={Shiping} width={120} height={50} alt="shiping logo"/>
           </a>
 
-          <div className='md:hide'>
+          <div className='md:hidden'>
             <button className='menu-btn text-gray-500 hover:text-gray-800'
               onClick={() => {setState(!state)}}      
             >
-              {state ? <Nav1/> : <Nav2/>}
+              {state ? <Nav3/> : <Nav2/>}
             </button>
           </div>
         </div>
