@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Vazir&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 @layer base {
     html {
-        font-family: 'Vazir', sans-serif;
+        font-family: 'Vazir','Scheherazade', sans-serif;
     }
 }
 /* :root {

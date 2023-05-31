@@ -28,8 +28,8 @@ const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
           <h3 className='text-gray-800 text-xl font-bold sm:text-2xl text-right'>
             ایجاد باربری
           </h3>
-          <p className='text-gray-600 mt-2 text-right font-vazir'>
-            با ایجاد یک باربری جدید می توانید بر بستر بلاکچین یک بار را ایجاد کنید. آن را پیگیری کنید و در لحظه تحویل بار با راز دیجیتال هزینه آن را ورداخت کنید. این روش از ایمن ترین روش های دنیاست !
+          <p className='text-gray-600 mt-2 text-right font-Scheherazade'>
+            با ایجاد یک باربری جدید می توانید بر بستر بلاکچین یک بار را ایجاد کنید. آن را پیگیری کنید و در لحظه تحویل بار با راز دیجیتال هزینه آن را ورداخت کنید. این روش از ایمن ترین روش های دنیاست
           </p>
         </div>
       </div>
@@ -38,14 +38,14 @@ const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
         <table className='w-full table-auto text-sm text-left'>
           <thead className='bg-gray-50 text-gray-600 font-medium border-b'>
             <tr>
-              <th className='py-3 px-6'>Sender</th>
-              <th className='py-3 px-6'>Receiver</th>
-              <th className='py-3 px-6'>Pickup Time</th>
-              <th className='py-3 px-6'>Distance</th>
-              <th className='py-3 px-6'>Price</th>
-              <th className='py-3 px-6'>Delivery Time</th>
-              <th className='py-3 px-6'>Paid</th>
-              <th className='py-3 px-6'>Status</th>
+              <th className='py-3 px-6'>فرستنده</th>
+              <th className='py-3 px-6'>گیرنده</th>
+              <th className='py-3 px-6'>زمان بارگیری</th>
+              <th className='py-3 px-6'>فاصله</th>
+              <th className='py-3 px-6'>قیمت</th>
+              <th className='py-3 px-6'>زمان تحویل</th>
+              <th className='py-3 px-6'>پرداخت</th>
+              <th className='py-3 px-6'>وضعت</th>
             </tr>
           </thead>
           <tbody className='text-gray-600 divide-y'>
