@@ -1,42 +1,48 @@
 import React from 'react';
 
-const Services = () => {
-  const services = [
-    {
-      title: 'عنوان کارت ۱',
-      description: 'توضیحات کارت ۱',
-    },
-    {
-      title: 'عنوان کارت ۲',
-      description: 'توضیحات کارت ۲',
-    },
-    {
-      title: 'عنوان کارت ۳',
-      description: 'توضیحات کارت ۳',
-    },
-    {
-      title: 'عنوان کارت ۴',
-      description: 'توضیحات کارت ۴',
-    },
-    {
-      title: 'عنوان کارت ۵',
-      description: 'توضیحات کارت ۵',
-    },
-    {
-      title: 'عنوان کارت ۶',
-      description: 'توضیحات کارت ۶',
-    },
-  ];
+const servicesData = [
+  {
+    title: 'خدمت ۱',
+    description: 'توضیحات خدمت ۱',
+  },
+  {
+    title: 'خدمت ۲',
+    description: 'توضیحات خدمت ۲',
+  },
+  {
+    title: 'خدمت ۳',
+    description: 'توضیحات خدمت ۳',
+  },
+  {
+    title: 'خدمت ۴',
+    description: 'توضیحات خدمت ۴',
+  },
+  {
+    title: 'خدمت ۵',
+    description: 'توضیحات خدمت ۵',
+  },
+  {
+    title: 'خدمت ۶',
+    description: 'توضیحات خدمت ۶',
+  },
+];
 
+const Services = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {services.map((service, index) => (
-        <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-4">{service.title}</h2>
-          <p className="text-gray-600">{service.description}</p>
+    <section className="py-12">
+      <div className="max-w-screen-xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {servicesData.map((service, index) => (
+            <div
+              key={index}
+              className="bg-gray-800 rounded-lg p-6 text-white shadow-md flex items-center justify-center"
+            >
+              <p className="text-center text-6xl font-bold">{service.description}</p>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </section>
   );
 };
 
