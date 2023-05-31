@@ -26,7 +26,7 @@ const myCustomTheme = {
     modalOverlay: '',
   },
   colors: {
-    accentColor: '#07296d',
+    accentColor: '#444444',
     accentColorForeground: '#ffffff',
     actionButtonBorder: '',
     actionButtonBorderMobile: '',
@@ -62,7 +62,7 @@ const myCustomTheme = {
   },
   radii: {
     actionButton: '10px',
-    connectButton: '',
+    connectButton: '10px',
     menuButton: '',
     modal: '',
     modalMobile: '',
