@@ -18,6 +18,66 @@ import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum, goerli } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
+import merge from 'lodash.merge';
+import { Theme } from '@rainbow-me/rainbowkit';
+
+const myCustomTheme = {
+  blurs: {
+    modalOverlay: '',
+  },
+  colors: {
+    accentColor: '#07296d',
+    accentColorForeground: '#ffffff',
+    actionButtonBorder: '',
+    actionButtonBorderMobile: '',
+    actionButtonSecondaryBackground: '',
+    closeButton: '',
+    closeButtonBackground: '',
+    connectButtonBackground: '#808080',
+    connectButtonBackgroundError: '',
+    connectButtonInnerBackground: '',
+    connectButtonText: '#ffffff',
+    connectButtonTextError: '',
+    connectionIndicator: '',
+    downloadBottomCardBackground: '',
+    downloadTopCardBackground: '',
+    error: '',
+    generalBorder: '',
+    generalBorderDim: '',
+    menuItemBackground: '',
+    modalBackdrop: '',
+    modalBackground: '',
+    modalBorder: '',
+    modalText: '',
+    modalTextDim: '',
+    modalTextSecondary: '',
+    profileAction: '',
+    profileActionHover: '',
+    profileForeground: '',
+    selectedOptionBorder: '',
+    standby: '',
+  },
+  fonts: {
+    body: '',
+  },
+  radii: {
+    actionButton: '10px',
+    connectButton: '',
+    menuButton: '',
+    modal: '',
+    modalMobile: '',
+  },
+  shadows: {
+    connectButton: '',
+    dialog: '',
+    profileDetailsAction: '',
+    selectedOption: '',
+    selectedWallet: '',
+    walletLogo: '',
+  },
+};
+
+
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
     mainnet,
@@ -64,7 +124,7 @@ const wagmiConfig = createConfig({
 function MyApp({ Component, pageProps }) {
   return (
     <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
+      <RainbowKitProvider appInfo={demoAppInfo} theme={myCustomTheme} chains={chains}>
          <TrackingProvider> 
            <Navbar/> 
           <Component {...pageProps} />
