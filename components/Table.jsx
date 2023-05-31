@@ -1,4 +1,6 @@
-export default ({setCreateShipmentModel, allShipmentsData}) => {
+import React from 'react'
+
+const Table = ({setCreateShipmentModel, allShipmentsData}) => {
 
   const convertTime = time => {
     const newTime   = new Date(time);
@@ -7,7 +9,18 @@ export default ({setCreateShipmentModel, allShipmentsData}) => {
       month: "2-digit",
       day:   "2-digit"
     }).format(newTime);
-  }
+    return dateTime;
+  };
 
-  
+  console.log(allShipmentsData);
+
+  return (
+    <div className='max-w-screen-xl mx-auto px-4 md:px-8'>
+      <div className='items-start justify-between md:flex'>
+
+      </div>
+    </div>
+  )
 }
+
+export default Table
