@@ -34,7 +34,7 @@ const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
         </div>
       </div>
 
-      <div className='mt-12 shadow-sm border overflow-auto'>
+      <div className='mt-12 shadow-sm border rounded-lg overflow-auto'>
         <table className='w-full table-auto text-sm text-left'>
           <thead className='bg-gray-50 text-gray-600 font-medium border-b'>
             <tr className='flex flex-row-reverse justify-between items-center '>
