@@ -28,7 +28,7 @@ const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
           <h3 className='text-gray-800 text-xl font-bold sm:text-2xl text-right'>
             ایجاد باربری
           </h3>
-          <p className='text-gray-600 mt-2 text-right'>
+          <p className='text-gray-600 mt-2 text-right font-vazir'>
             با ایجاد یک باربری جدید می توانید بر بستر بلاکچین یک بار را ایجاد کنید. آن را پیگیری کنید و در لحظه تحویل بار با راز دیجیتال هزینه آن را ورداخت کنید. این روش از ایمن ترین روش های دنیاست !
           </p>
         </div>

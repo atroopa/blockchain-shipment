@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazir&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    html {
+        font-family: 'Vazir', sans-serif;
+    }
+}
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
