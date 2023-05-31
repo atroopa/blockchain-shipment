@@ -27,7 +27,12 @@ const servicesData = [
   },
 ];
 
-const Services = () => {
+const Services = ({
+  setOpenProfile,
+  setCompeleteModel,
+  setGetModel,
+  startModal
+}) => {
   return (
     <section className="py-12">
       <div className="max-w-screen-xl mx-auto px-4">
