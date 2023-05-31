@@ -21,7 +21,7 @@ const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
             className='inline-block px-4 py-2 text-white duration-150 font-medium
                        bg-gray-800 hover:bg-gray-700 active:bg-gray-900 md:text-sm
                        rounded-lg md:inline-flex'>
-            Add Tracking
+            باربری جدید
           </p>
         </div>
         <div className='max-w-lg'>
@@ -29,7 +29,7 @@ const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
             ایجاد باربری
           </h3>
           <p className='text-gray-600 mt-2 text-right'>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi repellendus impedit earum, molestiae, a ipsa quo amet reprehenderit velit harum optio, quasi tempora voluptatum incidunt eaque dignissimos ad ipsum asperiores?
+            با ایجاد یک باربری جدید می توانید بر بستر بلاکچین یک بار را ایجاد کنید. آن را پیگیری کنید و در لحظه تحویل بار با راز دیجیتال هزینه آن را ورداخت کنید. این روش از ایمن ترین روش های دنیاست !
           </p>
         </div>
       </div>
