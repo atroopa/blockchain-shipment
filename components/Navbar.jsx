@@ -3,20 +3,20 @@ import {ThemeContext}       from "@/context/Tracking";
 import { Nav1, Nav2, Nav3 } from '@/components';
 import Image                from 'next/image';
 import Shiping              from '../shiping.png';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ConnectButton }    from '@rainbow-me/rainbowkit';
 
 const Navbar = () => {
 
-  const [state, setState] = useState(false);
+  const [state, setState]             = useState(false);
   const {currentUser, handleConnect } = useContext(ThemeContext);
   console.log(currentUser);
 
 
   const navigation = [
-    {title: "بلاکچین"      , path: "#"},
-    {title: "ارتباط با ما"  , path: "#"},
-    {title: "سرویس ها", path: "#"},
-    {title: "خانه"     , path: "#"}
+    {title: "بلاکچین"       ,path: "#"},
+    {title: "ارتباط با ما"   ,path: "#"},
+    {title: "سرویس ها"    ,path: "#"},
+    {title: "خانه"         ,path: "#"}
   ];
 
   
@@ -42,7 +42,7 @@ const Navbar = () => {
         <div className='flex items-center justify-between py-5 md:block'>
 
           <a href="#">
-            <Image src={Shiping} width={120} height={50} alt="shiping logo"/>
+            <Image src={Shiping} priority={true} width={120} height={50} alt="shiping logo" style={{ width: 'auto', height: 'auto' }}/>
           </a>
 
           <div className='md:hidden'>
