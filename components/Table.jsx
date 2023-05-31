@@ -37,7 +37,7 @@ const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
       <div className='mt-12 shadow-sm border overflow-auto'>
         <table className='w-full table-auto text-sm text-left'>
           <thead className='bg-gray-50 text-gray-600 font-medium border-b'>
-            <tr>
+            <tr className='flex flex-row-reverse justify-between items-center '>
               <th className='py-3 px-6'>فرستنده</th>
               <th className='py-3 px-6'>گیرنده</th>
               <th className='py-3 px-6'>زمان بارگیری</th>
