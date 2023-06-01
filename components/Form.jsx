@@ -1,9 +1,20 @@
 import { useState } from "react";
 
 
-const Form = () => {
+const Form = ({setCreateShipmentModel, createShipmentModel, createShipment}) => {
+  
+  const [shipment, setShipment] = useState({
+    receiver:   "",
+    pickupTime: "",
+    distance:   "",
+    price:      ""
+  });
+  
+  
   return (
-    <div>Form</div>
+    <div>
+      
+    </div>
   )
 }
 
