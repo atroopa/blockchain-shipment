@@ -29,10 +29,10 @@ const index = () => {
   
   // STATE VARIABLE
   const [createShipmentModel, setCreateShipmentModel] = useState(false);
-  const [openProfile , setOpenProfile]                = useState(false);
-  const [startModal, setStartModal]                   = useState(false);
-  const [compeleteModel, setCompeleteModel]           = useState(false);
-  const [getModel, setGetModel]                       = useState(false);
+  const [openProfile ,        setOpenProfile]         = useState(false);
+  const [startModal,          setStartModal]          = useState(false);
+  const [compeleteModel,      setCompeleteModel]      = useState(false);
+  const [getModel,            setGetModel]            = useState(false);
 
   // DATA SET VARIABLE
   const [allShipmentsData, setAllShipmentData]        = useState(false);
