@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const [state, setState]             = useState(false);
   const {currentUser, handleConnect } = useContext(ThemeContext);
-  console.log(currentUser);
+  
 
 
   const navigation = [
