@@ -33,7 +33,7 @@ export const TrackingProvider = ({ children }) => {
                 const contract   = fetchContract(signer);
                 const createItem =  await contract.createShipment(
                     receiver,
-                    new Date[pickupTime].getTime(),
+                    new Date(pickupTime).getTime(),
                     distance,
                     ethers.utils.parseUnits(price, 18),
                     {
