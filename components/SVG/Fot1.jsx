@@ -4,7 +4,7 @@ const Fot1 = () => {
   return (
     <svg className="w-32" fill="none" viewBox="0 0 338 100">
       <path
-        fill="#000"
+        fill="#A6A6A6"
         d="M324.477 99.751H13.532c-6.841 0-12.438-5.597-12.438-12.438V12.688C1.094 5.846 6.69.249 13.532.249h310.945c6.841 0 12.438 5.597 12.438 12.438v74.627c0 6.84-5.597 12.437-12.438 12.437z"
       />
       <path
@@ -60,7 +60,7 @@ const Fot1 = () => {
         d="M58.055 50.002l-30.82-30.82c.585-.527 1.336-.807 2.196-.807.843 0 1.79.269 2.791.836L68.33 39.727 58.055 50.002zm10.506-10.507L32.222 18.848c-1-.567-1.948-.837-2.791-.837h-.011.015c.841 0 1.788.268 2.787.836l36.34 20.648z"
       />
       <path
-        fill="#000"
+        fill="#A6A6A6"
         d="M29.664 81.987c.782-.044 1.648-.313 2.558-.83l36.105-20.514-36.105 20.515c-.91.516-1.776.785-2.558.83zm-2.427-.802l-.008-.007a.068.068 0 01.008.007zm-.168-.163l-.016-.016.015.016z"
       />
       <path
@@ -72,7 +72,7 @@ const Fot1 = () => {
         d="M29.437 81.993c-.861 0-1.614-.28-2.2-.81v.002a.068.068 0 00-.008-.007l-.16-.156-.016-.017.185-.185c.585.529 1.337.81 2.198.809.841 0 1.788-.268 2.786-.835L68.33 60.28l.231.231-.234.133-36.105 20.515c-.91.516-1.776.785-2.558.83a4.73 4.73 0 01-.227.005"
       />
       <path
-        fill="#000"
+        fill="#A6A6A6"
         d="M27.053 81.006c-.724-.766-1.151-1.955-1.151-3.495v-.001c0 1.541.427 2.73 1.15 3.495v.001"
       />
       <path
@@ -84,7 +84,7 @@ const Fot1 = () => {
         d="M27.053 81.005l.185-.185-.185.185"
       />
       <path
-        fill="#000"
+        fill="#A6A6A6"
         d="M83.052 51.289a3.08 3.08 0 00.288-1.283v-.002c0 .432-.096.864-.288 1.285z"
       />
       <path
@@ -120,12 +120,12 @@ const Fot1 = () => {
           y2="63.662"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#00A0FF" />
-          <stop offset=".007" stop-color="#00A1FF" />
-          <stop offset=".26" stop-color="#00BEFF" />
-          <stop offset=".512" stop-color="#00D2FF" />
-          <stop offset=".76" stop-color="#00DFFF" />
-          <stop offset="1" stop-color="#00E3FF" />
+          <stop stopColor="#00A0FF" />
+          <stop offset=".007" stopColor="#00A1FF" />
+          <stop offset=".26" stopColor="#00BEFF" />
+          <stop offset=".512" stopColor="#00D2FF" />
+          <stop offset=".76" stopColor="#00DFFF" />
+          <stop offset="1" stopColor="#00E3FF" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_3_178167"
@@ -135,10 +135,10 @@ const Fot1 = () => {
           y2="50.003"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFE000" />
-          <stop offset=".409" stop-color="#FFBD00" />
-          <stop offset=".775" stop-color="orange" />
-          <stop offset="1" stop-color="#FF9C00" />
+          <stop stopColor="#FFE000" />
+          <stop offset=".409" stopColor="#FFBD00" />
+          <stop offset=".775" stopColor="orange" />
+          <stop offset="1" stopColor="#FF9C00" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_3_178167"
@@ -148,8 +148,8 @@ const Fot1 = () => {
           y2="112.324"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FF3A44" />
-          <stop offset="1" stop-color="#C31162" />
+          <stop stopColor="#FF3A44" />
+          <stop offset="1" stopColor="#C31162" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_3_178167"
@@ -159,11 +159,11 @@ const Fot1 = () => {
           y2="25.967"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#32A071" />
-          <stop offset=".069" stop-color="#2DA771" />
-          <stop offset=".476" stop-color="#15CF74" />
-          <stop offset=".801" stop-color="#06E775" />
-          <stop offset="1" stop-color="#00F076" />
+          <stop stopColor="#32A071" />
+          <stop offset=".069" stopColor="#2DA771" />
+          <stop offset=".476" stopColor="#15CF74" />
+          <stop offset=".801" stopColor="#06E775" />
+          <stop offset="1" stopColor="#00F076" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_3_178167"
@@ -173,10 +173,10 @@ const Fot1 = () => {
           y2="50.004"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#CCB300" />
-          <stop offset=".409" stop-color="#CC9700" />
-          <stop offset=".775" stop-color="#CC8400" />
-          <stop offset="1" stop-color="#CC7D00" />
+          <stop stopColor="#CCB300" />
+          <stop offset=".409" stopColor="#CC9700" />
+          <stop offset=".775" stopColor="#CC8400" />
+          <stop offset="1" stopColor="#CC7D00" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_3_178167"
@@ -186,8 +186,8 @@ const Fot1 = () => {
           y2="112.324"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#CC2E36" />
-          <stop offset="1" stop-color="#9C0E4E" />
+          <stop stopColor="#CC2E36" />
+          <stop offset="1" stopColor="#9C0E4E" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_3_178167"
@@ -197,12 +197,12 @@ const Fot1 = () => {
           y2="63.662"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#008DE0" />
-          <stop offset=".007" stop-color="#008DE0" />
-          <stop offset=".26" stop-color="#00A7E0" />
-          <stop offset=".512" stop-color="#00B8E0" />
-          <stop offset=".76" stop-color="#00C4E0" />
-          <stop offset="1" stop-color="#00C7E0" />
+          <stop stopColor="#008DE0" />
+          <stop offset=".007" stopColor="#008DE0" />
+          <stop offset=".26" stopColor="#00A7E0" />
+          <stop offset=".512" stopColor="#00B8E0" />
+          <stop offset=".76" stopColor="#00C4E0" />
+          <stop offset="1" stopColor="#00C7E0" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_3_178167"
@@ -212,8 +212,8 @@ const Fot1 = () => {
           y2="112.327"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E0333C" />
-          <stop offset="1" stop-color="#AB0F56" />
+          <stop stopColor="#E0333C" />
+          <stop offset="1" stopColor="#AB0F56" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_3_178167"
@@ -223,10 +223,10 @@ const Fot1 = () => {
           y2="50.003"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E0C500" />
-          <stop offset=".409" stop-color="#E0A600" />
-          <stop offset=".775" stop-color="#E09100" />
-          <stop offset="1" stop-color="#E08900" />
+          <stop stopColor="#E0C500" />
+          <stop offset=".409" stopColor="#E0A600" />
+          <stop offset=".775" stopColor="#E09100" />
+          <stop offset="1" stopColor="#E08900" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_3_178167"
@@ -236,10 +236,10 @@ const Fot1 = () => {
           y2="50.003"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFE840" />
-          <stop offset=".409" stop-color="#FFCE40" />
-          <stop offset=".775" stop-color="#FFBC40" />
-          <stop offset="1" stop-color="#FFB540" />
+          <stop stopColor="#FFE840" />
+          <stop offset=".409" stopColor="#FFCE40" />
+          <stop offset=".775" stopColor="#FFBC40" />
+          <stop offset="1" stopColor="#FFB540" />
         </linearGradient>
         <linearGradient
           id="paint10_linear_3_178167"
@@ -249,12 +249,12 @@ const Fot1 = () => {
           y2="63.662"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#40B8FF" />
-          <stop offset=".007" stop-color="#40B9FF" />
-          <stop offset=".26" stop-color="#40CEFF" />
-          <stop offset=".512" stop-color="#40DDFF" />
-          <stop offset=".76" stop-color="#40E7FF" />
-          <stop offset="1" stop-color="#40EAFF" />
+          <stop stopColor="#40B8FF" />
+          <stop offset=".007" stopColor="#40B9FF" />
+          <stop offset=".26" stopColor="#40CEFF" />
+          <stop offset=".512" stopColor="#40DDFF" />
+          <stop offset=".76" stopColor="#40E7FF" />
+          <stop offset="1" stopColor="#40EAFF" />
         </linearGradient>
         <linearGradient
           id="paint11_linear_3_178167"
@@ -264,11 +264,11 @@ const Fot1 = () => {
           y2="25.967"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#65B895" />
-          <stop offset=".069" stop-color="#62BD95" />
-          <stop offset=".476" stop-color="#50DB97" />
-          <stop offset=".801" stop-color="#44ED98" />
-          <stop offset="1" stop-color="#40F498" />
+          <stop stopColor="#65B895" />
+          <stop offset=".069" stopColor="#62BD95" />
+          <stop offset=".476" stopColor="#50DB97" />
+          <stop offset=".801" stopColor="#44ED98" />
+          <stop offset="1" stopColor="#40F498" />
         </linearGradient>
       </defs>
     </svg>
