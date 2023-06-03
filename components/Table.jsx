@@ -1,45 +1,20 @@
 import React from 'react';
 
 const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
-  
+
   const convertTime = (time) => {
-
-    const newTime  = new Date(time);
-    //const newTime1 = new Date(Number(time)).toLocaleDateString();
-
-     const dateTime  = new Intl.DateTimeFormat("en-US", {
-       year: "numeric",
-       month: "2-digit",
+    const newTime = new Date(time);
+    const dateTime = new Intl.DateTimeFormat("en-US", {
+      year: "numeric",
+      month: "2-digit",
       day: "2-digit"
-     }).format(newTime);
+    }).format(newTime);
 
-    console.log("Time:" , newTime);
-    console.log("newTime: ", dateTime);
-    
-    
+    console.log("Time:", newTime);
+    console.log("newTime:", dateTime);
+
     return dateTime;
   };
-
-  function convertMillisecondsToDate(milliseconds) {
-    // تبدیل میلی‌ثانیه به تاریخ
-    var date = new Date(parseInt(milliseconds));
-    
-    // بررسی صحت تاریخ
-    if (isNaN(date.getTime())) {
-      console.log("Invalid date");
-    }
-    
-    // استخراج سال، ماه و روز
-    var year = date.getFullYear();
-    var month = date.getMonth() + 1;
-    var day = date.getDate();
-    
-    // ایجاد استرینگ به شکل "روز-ماه-سال"
-    var formattedDate = day + '-' + month + '-' + year;
-    
-    // بازگرداندن استرینگ حاوی تاریخ
-    return formattedDate;
-  }
 
   console.log(allShipmentsData);
 
@@ -65,49 +40,49 @@ const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
       </div>
 
       <div className='mt-12 shadow-sm border rounded-lg overflow-auto'>
-        <table className='w-full table-auto text-sm text-left'>
+        <table className='w-full table-auto text-sm text-center'>
           <thead className='bg-gray-50 text-gray-600 font-medium border-b'>
-            <tr className='flex flex-row-reverse justify-between items-center '>
-              <th className='py-3 px-6'>فرستنده</th>
-              <th className='py-3 px-6'>گیرنده</th>
-              <th className='py-3 px-6'>زمان بارگیری</th>
-              <th className='py-3 px-6'>فاصله</th>
-              <th className='py-3 px-6'>قیمت</th>
-              <th className='py-3 px-6'>زمان تحویل</th>
-              <th className='py-3 px-6'>پرداخت</th>
-              <th className='py-3 px-6'>وضعت</th>
+            <tr>
+              <th className='py-3 px-6 text-center'>وضعت</th>
+              <th className='py-3 px-6 text-center'>پرداخت</th>
+              <th className='py-3 px-6 text-center'>زمان تحویل</th>
+              <th className='py-3 px-6 text-center'>قیمت</th>
+              <th className='py-3 px-6 text-center'>فاصله</th>
+              <th className='py-3 px-6 text-center'>زمان بارگیری</th>
+              <th className='py-3 px-6 text-center'>گیرنده</th>
+              <th className='py-3 px-6 text-center'>فرستنده</th>
             </tr>
           </thead>
           <tbody className='text-gray-600 divide-y'>
             {allShipmentsData && allShipmentsData.map((shipment, idx) => (
               <tr key={idx}>
                 <td className='px-6 py-4 whitespace-nowrap'>
-                  {shipment.sender.slice(0, 15)} ...
-                </td>
-                <td className='px-6 py-4 whitespace-nowrap'>
-                  {shipment.receiver.slice(0, 15)} ...
-                </td>
-                <td className='px-6 py-4 whitespace-nowrap'>
-                  {convertTime (shipment.pickupTime)}
-                </td>
-                <td className='px-6 py-4 whitespace-nowrap'>
-                  {shipment.distance} KM
-                </td>
-                <td className='px-6 py-4 whitespace-nowrap'>
-                  {shipment.price}
-                </td>
-                <td className='px-6 py-4 whitespace-nowrap'>
-                  {shipment.deliveryTime}
-                </td>
-                <td className='px-6 py-4 whitespace-nowrap'>
-                  {shipment.isPaid ? "Completed" : "Not Completed"}
-                </td>
-                <td className='px-6 py-4 whitespace-nowrap'>
                   {shipment.status === 0
                     ? "Pending"
                     : shipment.status === 1
                       ? "IN_TRANSIT"
                       : "Delivered"}
+                </td>
+                <td className='px-6 py-4 whitespace-nowrap'>
+                  {shipment.isPaid ? "Completed" : "Not Completed"}
+                </td>
+                <td className='px-6 py-4 whitespace-nowrap'>
+                  {shipment.deliveryTime}
+                </td>
+                <td className='px-6 py-4 whitespace-nowrap'>
+                  {shipment.price} ETH
+                </td>
+                <td className='px-6 py-4 whitespace-nowrap'>
+                  {shipment.distance} KM
+                </td>
+                <td className='px-6 py-4 whitespace-nowrap'>
+                  {convertTime(shipment.pickupTime)}
+                </td>
+                <td className='px-6 py-4 whitespace-nowrap'>
+                  {shipment.receiver.slice(0, 15)} ...
+                </td>
+                <td className='px-6 py-4 whitespace-nowrap'>
+                  {shipment.sender.slice(0, 15)} ...
                 </td>
               </tr>
             ))}
@@ -116,6 +91,6 @@ const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Table;
