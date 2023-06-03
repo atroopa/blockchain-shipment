@@ -3,40 +3,44 @@ import React from 'react';
 const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
   
   const convertTime = (time) => {
-    const newTime1  = new Date(time);
-    const newTime = new Date(Number(time)).toLocaleDateString();
+    console.log("Time exite: ",time);
+    console.log("Type of time : ",typeof(time));
+    // const newTime1  = new Date(time);
+    // const newTime = new Date(Number(time)).toLocaleDateString();
 
-     const dateTime  = new Intl.DateTimeFormat("en-US", {
-       year: "numeric",
-       month: "2-digit",
-      day: "2-digit"
-     }).format(newTime);
+    //  const dateTime  = new Intl.DateTimeFormat("en-US", {
+    //    year: "numeric",
+    //    month: "2-digit",
+    //   day: "2-digit"
+    //  }).format(newTime);
 
-    console.log("Time:" , time);
-    console.log("newTime: ", newTime);
+    // console.log("Time:" , time);
+    // console.log("newTime: ", newTime);
     
     
-    return newTime;
+    //return newTime;
   };
 
-  const convertTime2 = (time) => {
-    const date = new Date(time);
+  function convertMillisecondsToDate(milliseconds) {
+    // تبدیل میلی‌ثانیه به تاریخ
+    var date = new Date(parseInt(milliseconds));
     
-    if (isNaN(date)) {
-      return "Invalid Date";
+    // بررسی صحت تاریخ
+    if (isNaN(date.getTime())) {
+      console.log("Invalid date");
     }
     
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
+    // استخراج سال، ماه و روز
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
     
-    // ایجاد رشته فرمت دار با صفر در صورت لزوم
-    const formattedDay = day < 10 ? `0${day}` : day;
-    const formattedMonth = month < 10 ? `0${month}` : month;
+    // ایجاد استرینگ به شکل "روز-ماه-سال"
+    var formattedDate = day + '-' + month + '-' + year;
     
-    return `${formattedMonth}/${formattedDay}/${year}`;
-  };
-
+    // بازگرداندن استرینگ حاوی تاریخ
+    return formattedDate;
+  }
 
   console.log(allShipmentsData);
 
@@ -85,7 +89,7 @@ const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
                   {shipment.receiver.slice(0, 15)} ...
                 </td>
                 <td className='px-6 py-4 whitespace-nowrap'>
-                  {convertTime(shipment.pickipTime)}
+                  {convertTime (shipment.pickipTime)}
                 </td>
                 <td className='px-6 py-4 whitespace-nowrap'>
                   {shipment.distance} KM
