@@ -3,22 +3,21 @@ import React from 'react';
 const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
   
   const convertTime = (time) => {
-    console.log("Time exite: ",time);
-    console.log("Type of time : ",typeof(time));
-    // const newTime1  = new Date(time);
-    // const newTime = new Date(Number(time)).toLocaleDateString();
 
-    //  const dateTime  = new Intl.DateTimeFormat("en-US", {
-    //    year: "numeric",
-    //    month: "2-digit",
-    //   day: "2-digit"
-    //  }).format(newTime);
+    const newTime  = new Date(time);
+    //const newTime1 = new Date(Number(time)).toLocaleDateString();
 
-    // console.log("Time:" , time);
-    // console.log("newTime: ", newTime);
+     const dateTime  = new Intl.DateTimeFormat("en-US", {
+       year: "numeric",
+       month: "2-digit",
+      day: "2-digit"
+     }).format(newTime);
+
+    console.log("Time:" , newTime);
+    console.log("newTime: ", dateTime);
     
     
-    //return newTime;
+    return dateTime;
   };
 
   function convertMillisecondsToDate(milliseconds) {
@@ -89,7 +88,7 @@ const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
                   {shipment.receiver.slice(0, 15)} ...
                 </td>
                 <td className='px-6 py-4 whitespace-nowrap'>
-                  {convertTime (shipment.pickipTime)}
+                  {convertTime (shipment.pickupTime)}
                 </td>
                 <td className='px-6 py-4 whitespace-nowrap'>
                   {shipment.distance} KM
