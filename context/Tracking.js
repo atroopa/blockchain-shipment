@@ -28,7 +28,8 @@ export const TrackingProvider = ({ children }) => {
                 
                 const web3Modal  = new Web3Modal();
                 const connection = await web3Modal.connect();
-                const provider   = new ethers.providers.Web3Provider(connection); 
+                //const provider   = new ethers.providers.Web3Provider(connection); 
+                const provider   = new ethers.providers.JsonRpcProvider(Blockchain.API_URL);
                 const signer     = provider.getSigner();
                 const contract   = fetchContract(signer);
                 const createItem =  await contract.createShipment(

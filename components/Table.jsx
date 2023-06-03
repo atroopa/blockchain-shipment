@@ -1,15 +1,42 @@
 import React from 'react';
 
 const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
+  
   const convertTime = (time) => {
-    const newTime = new Date(time);
-    const dateTime = new Intl.DateTimeFormat("en-US", {
-      year: "numeric",
-      month: "2-digit",
+    const newTime1  = new Date(time);
+    const newTime = new Date(Number(time)).toLocaleDateString();
+
+     const dateTime  = new Intl.DateTimeFormat("en-US", {
+       year: "numeric",
+       month: "2-digit",
       day: "2-digit"
-    }).format(newTime);
-    return dateTime;
+     }).format(newTime);
+
+    console.log("Time:" , time);
+    console.log("newTime: ", newTime);
+    
+    
+    return newTime;
   };
+
+  const convertTime2 = (time) => {
+    const date = new Date(time);
+    
+    if (isNaN(date)) {
+      return "Invalid Date";
+    }
+    
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    
+    // ایجاد رشته فرمت دار با صفر در صورت لزوم
+    const formattedDay = day < 10 ? `0${day}` : day;
+    const formattedMonth = month < 10 ? `0${month}` : month;
+    
+    return `${formattedMonth}/${formattedDay}/${year}`;
+  };
+
 
   console.log(allShipmentsData);
 
