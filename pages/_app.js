@@ -46,7 +46,7 @@ const myCustomTheme = {
     generalBorderDim: '',
     menuItemBackground: '',
     modalBackdrop: '',
-    modalBackground: '',
+    modalBackground: 'LightGray',
     modalBorder: '',
     modalText: '',
     modalTextDim: '',
