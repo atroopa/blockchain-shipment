@@ -10,9 +10,6 @@ const Table = ({ setCreateShipmentModel, allShipmentsData }) => {
       day: "2-digit"
     }).format(newTime);
 
-    console.log("Time:", newTime);
-    console.log("newTime:", dateTime);
-
     return dateTime;
   };
 
