@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const getShipment = () => {
+const getShipment = ({
+  getModel,
+  setGetModel,
+  getShipment
+}) => {
+
+const [index, setIndex] = useState(0);
+const [singleShipmentData , setSingleShipmentData] = useState();
+
+
   return (
     <div>getShipment</div>
   )
