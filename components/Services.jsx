@@ -6,8 +6,8 @@ const servicesData = [
     description: 'توضیحات خدمت ۱',
   },
   {
-    title: 'خدمت ۲',
-    description: 'توضیحات خدمت ۲',
+    title: 'getShipment',
+    description: 'getShipment',
   },
   {
     title: 'خدمت ۳',
