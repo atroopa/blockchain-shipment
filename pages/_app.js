@@ -6,7 +6,7 @@ import '@rainbow-me/rainbowkit/styles.css';
 import {
   RainbowKitProvider,
   getDefaultWallets,
-  connectorsForWallets,
+  connectorsForWallets
 } from '@rainbow-me/rainbowkit';
 import {
   argentWallet,
