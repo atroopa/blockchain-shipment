@@ -53,7 +53,7 @@ const index = () => {
         setOpenProfile    = {setOpenProfile}
         setCompeleteModel = {setCompeleteModel}
         setGetModel       = {setGetModel}
-        setStartModel     = {startModal}
+        setStartModel     = {setStartModal}
       />
 
       <Table

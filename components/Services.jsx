@@ -1,38 +1,57 @@
-import React from 'react';
-
-const servicesData = [
-  {
-    title: 'خدمت ۱',
-    description: 'توضیحات خدمت ۱',
-  },
-  {
-    title: 'getShipment',
-    description: 'getShipment',
-  },
-  {
-    title: 'خدمت ۳',
-    description: 'توضیحات خدمت ۳',
-  },
-  {
-    title: 'خدمت ۴',
-    description: 'توضیحات خدمت ۴',
-  },
-  {
-    title: 'خدمت ۵',
-    description: 'توضیحات خدمت ۵',
-  },
-  {
-    title: 'خدمت ۶',
-    description: 'توضیحات خدمت ۶',
-  },
-];
+import React, { useState } from 'react';
 
 const Services = ({
   setOpenProfile,
-  setCompeleteModel,
+  setCompleteModel,
   setGetModel,
-  startModal
+  setStartModal
 }) => {
+  const servicesData = [
+    {
+      title: '1',
+      description: 'توضیحات خدمت ۱',
+    },
+    {
+      title: '2',
+      description: 'getShipment',
+    },
+    {
+      title: '2',
+      description: 'توضیحات خدمت ۳',
+    },
+    {
+      title: '4',
+      description: 'توضیحات خدمت ۴',
+    },
+    {
+      title: '5',
+      description: 'توضیحات خدمت ۵',
+    },
+    {
+      title: '6',
+      description: 'توضیحات خدمت ۶',
+    },
+  ];
+
+  const openModelBox = (index) => {
+    switch (index) {
+      case 1:
+        setCompleteModel(true);
+        break;
+      case 2:
+        setGetModel(true);
+        break;
+      case 3:
+        setStartModal(true);
+        break;
+      case 4:
+        setOpenProfile(true);
+        break;
+      default:
+        console.log("from Services: Please Select True Option");
+    }
+  };
+
   return (
     <section className="py-12">
       <div className="max-w-screen-xl mx-auto px-4">
@@ -40,7 +59,8 @@ const Services = ({
           {servicesData.map((service, index) => (
             <div
               key={index}
-              className="bg-gray-800 rounded-lg p-6 text-white shadow-md flex items-center justify-center"
+              className="bg-gray-800 rounded-lg p-6 text-white shadow-md flex items-center justify-center cursor-pointer"
+              onClick={() => openModelBox(index +1)}
             >
               <p className="text-center text-6xl font-bold">{service.description}</p>
             </div>
