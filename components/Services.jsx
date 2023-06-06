@@ -13,7 +13,7 @@ const Services = ({
     },
     {
       title: '2',
-      description: 'getShipment',
+      description: 'جزییات محصول',
     },
     {
       title: '3',
