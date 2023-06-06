@@ -134,13 +134,14 @@ export const TrackingProvider = ({ children }) => {
 
 
         const getShipment = async index => {
-            console.log(index * 1);
+            console.log("from Tracking index * 1:", index * 1);
     
             try {
                 
                 if(!window.ethereum) return "please Install MetaMask";
     
-                const accounts       = await window.ethereum.request({ method: "eth_accounts", });
+                const accounts       = await window.ethereum.request({ method: "eth_requestAccounts" , });
+                //const accounts       = "0x7A5dFbA5389021C047e3E080aa0197DE9d32bAcA";
                 const provider       = new ethers.providers.JsonRpcProvider(Blockchain.API_URL);
                 const contract       = fetchContract(provider);
                 const shipment       = contract.getShipment(accounts[0], index * 1);
@@ -163,9 +164,6 @@ export const TrackingProvider = ({ children }) => {
     
         };
 
-
-
-
         const startShipment = async getProduct => {
             const {receiver, index} = getProduct;
     
@@ -173,7 +171,7 @@ export const TrackingProvider = ({ children }) => {
                 
                 if(!window.ethereum) return "install MetaMask";
     
-                const accounts       = await window.ethereum.request({ method: "eth_accounts", });
+                const accounts       = await window.ethereum.request({ method: "eth_requestAccounts" , });
                 const web3Modal      = new Web3Modal();
                 const connection     = await web3Modal.connect();
                 const provider       = new ethers.providers.Web3Provider(connection);
