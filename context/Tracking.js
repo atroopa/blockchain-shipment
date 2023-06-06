@@ -145,7 +145,15 @@ export const TrackingProvider = ({ children }) => {
                 const ganache        = Blockchain.ganacheAddress;
                 const provider       = new ethers.providers.JsonRpcProvider(Blockchain.API_URL);
                 const contract       = fetchContract(provider);
-                const shipment       = contract.getShipment(ganache, index * 1);
+                const shipment       = contract.getShipment(ganache, index * 1)
+                .then(shipment => {
+                    console.log("Shipment:", shipment);
+                    // دسترسی به نتیجه‌ی کامل promise و انجام عملیات مورد نیاز
+                  })
+                  .catch(error => {
+                    console.error("Error:", error);
+                    // بررسی و رفع خطاهای احتمالی
+                  });
                 const singleShiplent = {
                     sender      : shipment[0],
                     receiver    : shipment[1],
