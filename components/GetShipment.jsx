@@ -54,37 +54,37 @@ const GetShipment = ({
           </div>
           <div className="max-w-sm mx-auto py-3 space-y-3 text-center">
             <h4 className="text-lg font-medium text-gray-800">
-              Product Tracking Details
+            جزئیات پیگیری محصول
             </h4>
             <form onSubmit={(e) => e.preventDefault()}>
               <div className="relative mt-3">
                 <input
                   type="number"
-                  placeholder="Id"
-                  className="w-full pl-5 pr-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                  placeholder="آیدی محصول"
+                  className="text-right w-full pl-5 pr-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                   onChange={(e) => setIndex(parseInt(e.target.value))}
                 />
                 <button
                   onClick={() => getShipmentData()}
                   className="block w-full mt-3 py-3 px-4 font-medium text-sm text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg ring-offset-2 ring-indigo-600 focus:ring-2"
                 >
-                  Get Details
+                  رفتن به جزییات
                 </button>
               </div>
             </form>
             {singleShipmentData == undefined ? (
               ""
             ) : (
-              <div className="text-left">
-                <p>Sender: {singleShipmentData.sender.slice(0, 25)} ...</p>
-                <p>Receiver: {singleShipmentData.receiver.slice(0, 25)} ...</p>
-                <p>PickupTime {convertTime(singleShipmentData.pickupTime)}</p>
-                <p>DeliveryTime {convertTime(singleShipmentData.deliveryTime)}</p>
-                <p>Distance: {singleShipmentData.distance}</p>
-                <p>Price: {singleShipmentData.price}</p>
-                <p>Status: {singleShipmentData.status}</p>
+              <div className="text-right">
+                <p>... {singleShipmentData.sender.slice(0, 25)}   :فرستنده</p>
+                <p>... {singleShipmentData.receiver.slice(0, 25)}   :گیرنده</p>
+                <p>.... {convertTime(singleShipmentData.pickupTime)}    :تاریخ بارگیری</p>
+                <p>... {convertTime(singleShipmentData.deliveryTime)}   :تاریخ تحویل</p>
+                <p>... {singleShipmentData.distance}    :مسافت</p>
+                <p>... {singleShipmentData.price}   :قیمت</p>
+                <p>... {singleShipmentData.status}    :وضعیت</p>
                 <p>
-                  Paid: {singleShipmentData.isPaid ? "complete" : "Not Complete"}
+                  ... {singleShipmentData.isPaid ? "complete" : "Not Complete"}   :پرداخت
                 </p>
               </div>
             )}
