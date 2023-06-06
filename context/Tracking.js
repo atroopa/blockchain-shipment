@@ -138,13 +138,14 @@ export const TrackingProvider = ({ children }) => {
     
             try {
                 
-                if(!window.ethereum) return "please Install MetaMask";
+                //if(!window.ethereum) return "please Install MetaMask";
     
-                const accounts       = await window.ethereum.request({ method: "eth_requestAccounts" , });
+                //const accounts       = await window.ethereum.request({ method: "eth_requestAccounts" , });
                 //const accounts       = "0x7A5dFbA5389021C047e3E080aa0197DE9d32bAcA";
+                const ganache        = Blockchain.ganacheAddress;
                 const provider       = new ethers.providers.JsonRpcProvider(Blockchain.API_URL);
                 const contract       = fetchContract(provider);
-                const shipment       = contract.getShipment(accounts[0], index * 1);
+                const shipment       = contract.getShipment(ganache, index * 1);
                 const singleShiplent = {
                     sender      : shipment[0],
                     receiver    : shipment[1],
