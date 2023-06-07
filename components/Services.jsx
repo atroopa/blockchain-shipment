@@ -17,7 +17,7 @@ const Services = ({
     },
     {
       title: '3',
-      description: 'توضیحات خدمت ۳',
+      description: 'شروع حرکت محصول',
     },
     {
       title: '4',
