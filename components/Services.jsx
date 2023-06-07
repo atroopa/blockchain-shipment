@@ -60,7 +60,7 @@ const Services = ({
             <div
               key={index}
               className="bg-gray-800 rounded-lg p-6 text-white shadow-md flex items-center justify-center cursor-pointer"
-              onClick={() => openModelBox(index +1)}
+              onClick={() => openModelBox(index + 1)}
             >
               <p className="text-center text-6xl font-bold">{service.description}</p>
             </div>

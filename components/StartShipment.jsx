@@ -1,9 +1,6 @@
 import {useState} from 'react'
 import { Str1 } from '@/components/index';
 
-
-
-
 const StartShipment = ({
   startModal,
   setStartModal,
@@ -78,7 +75,7 @@ const StartShipment = ({
     </div>
   ) : (
     ""
-  )
-}
+  );
+};
 
-export default StartShipment
+export default StartShipment;
