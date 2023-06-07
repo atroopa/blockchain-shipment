@@ -40,6 +40,14 @@ const CompeletShipment = ({compeleteModel , setCompeleteModel, compeletShipment}
                     }
                   />
                 </div>
+                <div className='relative mt-3'>
+                    <input 
+                      type='number'
+                      placeholder='ID'
+                      className='w-full pl-5 pr-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg '
+                      
+                    />
+                </div>
               </form>
             </div>
           </div>
