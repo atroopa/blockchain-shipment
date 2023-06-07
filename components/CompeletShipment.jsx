@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState} from 'react';
 
 
 const CompeletShipment = ({compeleteModel , setCompeleteModel, compeletShipment}) => {
@@ -10,7 +10,7 @@ const CompeletShipment = ({compeleteModel , setCompeleteModel, compeletShipment}
 
   const changeStatus = async ()  => {
     compeletShipment(completeShip);
-  }
+  };
 
   return compeleteModel ? (
     <div className='fixed inset-0 z-10 overflow-y-auto'>
