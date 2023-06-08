@@ -1,8 +1,8 @@
 export const API_URL = "http://127.0.0.1:7545";
 // 0x6dAE04565cE8033553Eb4916a2c1Bc90C7Bf839B
 //export const PRIVATE_KEY = "0x39cf0934d9e05f29e4c4270acb7164a608b965f55efe61f1fa49d53d590d0b18";
-export const contractAddress = "0x62EC49475811C0193452E06534796040495B064C";
-export const ganacheAddress  = "0x28dA6eAfc90DDB8B1DE165E92bC692D9cD0d34f2";
+export const contractAddress = "0x55848E30Cd29DB7C9Fc8551dc45f8f8a475A5d0B";
+export const ganacheAddress  = "0xdFdf16B1a3c1bc1d530289246611e8842409C1F2";
 export const contractAbi = [
 	{
 		"inputs": [
