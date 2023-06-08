@@ -44,7 +44,7 @@ const Profile = ({openProfile , setOpenProfile, currentUser, getShipmentCount}) 
                 href='#'
                 className='inline-flex items-center px-4 py-2 text-sm font-medium text-center text-black rounded-lg border-2'
               >
-                Balance 345 ETH
+                Balance: 345 ETH
               </a>
               <a 
                 href='#'

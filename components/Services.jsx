@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Services = ({
   setOpenProfile,
@@ -35,16 +35,16 @@ const Services = ({
 
   const openModelBox = (index) => {
     switch (index) {
-      case 1:
+      case 0:
         setCompleteModel(true);
         break;
-      case 2:
+      case 1:
         setGetModel(true);
         break;
-      case 3:
+      case 2:
         setStartModal(true);
         break;
-      case 4:
+      case 3:
         setOpenProfile(true);
         break;
       default:
@@ -60,7 +60,7 @@ const Services = ({
             <div
               key={index}
               className="bg-gray-800 rounded-lg p-6 text-white shadow-md flex items-center justify-center cursor-pointer"
-              onClick={() => openModelBox(index + 1)}
+              onClick={() => openModelBox(index)}
             >
               <p className="text-center text-6xl font-bold">{service.description}</p>
             </div>
