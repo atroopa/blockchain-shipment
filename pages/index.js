@@ -14,8 +14,6 @@ import {
 
 import {ThemeContext} from "@/context/Tracking";
 
-
-
 const index = () => {
   const {
     createShipment,
@@ -31,7 +29,7 @@ const index = () => {
   const [createShipmentModel, setCreateShipmentModel] = useState(false);
   const [openProfile ,        setOpenProfile]         = useState(false);
   const [startModal,          setStartModal]          = useState(false);
-  const [compeleteModel,      setCompeleteModel]      = useState(false);
+  const [completeModel,       setCompleteModel]       = useState(false);
   const [getModel,            setGetModel]            = useState(false);
 
   // DATA SET VARIABLE
@@ -51,7 +49,7 @@ const index = () => {
    
       <Services
         setOpenProfile    = {setOpenProfile}
-        setCompeleteModel = {setCompeleteModel}
+        setCompeleteModel = {setCompleteModel}
         setGetModel       = {setGetModel}
         setStartModel     = {setStartModal}
       />
@@ -74,8 +72,8 @@ const index = () => {
       />
 
       <CompeletShipment
-        compeleteModel    = {compeleteModel}
-        setCompeleteModel = {setCompeleteModel}
+        compeleteModel    = {completeModel}
+        setCompeleteModel = {setCompleteModel}
         compeletShipment  = {compeletShipment}
       />
 

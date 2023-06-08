@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 
-const CompeletShipment = ({compeleteModel , setCompeleteModel, compeletShipment}) => {
+const CompeletShipment = ({completeModel , setCompeleteModel, compeletShipment}) => {
 
   const [completeShip, setCompleteShip] = useState({
     receiver: "",
@@ -12,7 +12,7 @@ const CompeletShipment = ({compeleteModel , setCompeleteModel, compeletShipment}
     compeletShipment(completeShip);
   };
 
-  return compeleteModel ? (
+  return completeModel ? (
     <div className='fixed inset-0 z-10 overflow-y-auto'>
       <div className='fixed inset-0 w-full h-full bg-black opacity-40' onClick={() => setCompeleteModel(false)}>
         <div className='flex items-center min-h-screen px-4 py-8'>

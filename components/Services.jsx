@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState} from 'react';
 
 const Services = ({
   setOpenProfile,
@@ -33,24 +33,17 @@ const Services = ({
     },
   ];
 
-  const openModelBox = (index) => {
-    switch (index) {
-      case 0:
-        setCompleteModel(true);
-        break;
-      case 1:
-        setGetModel(true);
-        break;
-      case 2:
-        setStartModal(true);
-        break;
-      case 3:
-        setOpenProfile(true);
-        break;
-      default:
-        console.log("from Services: Please Select True Option");
+  const openModelBox = text => {
+    if (text === 1){
+      setCompleteModel(true);
+    }else if (text === 2){
+      setGetModel(true);
+    }else if (text === 3){
+      setStartModal(true);
+    }else if(text === 4){
+      setOpenProfile(true);
     }
-  };
+  }
 
   return (
     <section className="py-12">
@@ -60,7 +53,7 @@ const Services = ({
             <div
               key={index}
               className="bg-gray-800 rounded-lg p-6 text-white shadow-md flex items-center justify-center cursor-pointer"
-              onClick={() => openModelBox(index)}
+              onClick={() => openModelBox(index + 1)}
             >
               <p className="text-center text-6xl font-bold">{service.description}</p>
             </div>
