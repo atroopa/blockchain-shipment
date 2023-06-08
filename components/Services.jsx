@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React from 'react';
 
 const Services = ({
   setOpenProfile,
@@ -36,6 +36,7 @@ const Services = ({
   const openModelBox = text => {
     if (text === 1){
       setCompleteModel(true);
+      console.log(typeof(setCompleteModel(true)));
     }else if (text === 2){
       setGetModel(true);
     }else if (text === 3){
@@ -57,7 +58,7 @@ const Services = ({
             >
               <p className="text-center text-6xl font-bold">{service.description}</p>
             </div>
-          ))}
+          ) )}
         </div>
       </div>
     </section>
