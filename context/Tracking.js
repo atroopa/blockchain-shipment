@@ -84,10 +84,11 @@ export const TrackingProvider = ({ children }) => {
                 
                 if (!window.ethereum) return "Install MetaMask";
     
-                const accounts      = await window.ethereum.request({ method: "eth_accounts", });
+                //const accounts      = await window.ethereum.request({ method: "eth_accounts", });
+                const accounts      = Blockchain.ganacheAddress
                 const provider      = new ethers.providers.JsonRpcProvider(Blockchain.API_URL);
                 const contract      = fetchContract(provider);
-                const shipmentCount = contract.getShipmentCount(accounts[0]);
+                const shipmentCount = contract.getShipmentCount(accounts);
                 return shipmentCount.toNumber();
     
             } catch (error) {
@@ -106,14 +107,16 @@ export const TrackingProvider = ({ children }) => {
                 
                 if(!window.ethereum) return "Install MetaMask";
     
-                const accounts      = await window.ethereum.request({ method: "eth_accounts", });
+                //const accounts      = await window.ethereum.request({ method: "eth_accounts", });
+                const accounts      = Blockchain.ganacheAddress;
                 const web3Modal     = new Web3Modal();
                 const connection    = await web3Modal.connect();
-                const provider      = new ethers.providers.Web3Provider(connection);
+                //const provider      = new ethers.providers.Web3Provider(connection);
+                const provider       = new ethers.providers.JsonRpcProvider(Blockchain.API_URL);
                 const signer        = provider.getSigner();
                 const contract      = fetchContract(signer);
                 const transaction   = await contract.compeletShipment(
-                                                                        accounts[0],
+                                                                        accounts,
                                                                         receiver,
                                                                         index,
                                                                         {

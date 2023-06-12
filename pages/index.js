@@ -72,7 +72,7 @@ const index = () => {
       />
 
       <CompeletShipment
-        compeleteModel    = {completeModel}
+        completeModel    = {completeModel}
         setCompleteModel = {setCompleteModel}
         compeletShipment  = {compeletShipment}
       />
