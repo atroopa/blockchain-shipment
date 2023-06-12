@@ -49,9 +49,9 @@ const index = () => {
    
       <Services
         setOpenProfile    = {setOpenProfile}
-        setCompeleteModel = {setCompleteModel}
+        setCompleteModel = {setCompleteModel}
         setGetModel       = {setGetModel}
-        setStartModel     = {setStartModal}
+        setStartModal     = {setStartModal}
       />
 
       <Table
@@ -73,7 +73,7 @@ const index = () => {
 
       <CompeletShipment
         compeleteModel    = {completeModel}
-        setCompeleteModel = {setCompleteModel}
+        setCompleteModel = {setCompleteModel}
         compeletShipment  = {compeletShipment}
       />
 
