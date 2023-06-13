@@ -9,7 +9,7 @@ const Services = ({
   const servicesData = [
     {
       title: '1',
-      description: 'توضیحات خدمت ۱',
+      description: 'پایان سفر',
     },
     {
       title: '2',

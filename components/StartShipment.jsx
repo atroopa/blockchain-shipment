@@ -33,7 +33,7 @@ const StartShipment = ({
               Start Shiping 
             </h4>
 
-            <form onSubmit={(e) => preventDefault()}>
+            <form onSubmit={(e) => e.preventDefault()}>
               <div className='relative mt-3'>
                 <input 
                   type='text'
