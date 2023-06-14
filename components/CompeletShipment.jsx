@@ -20,7 +20,19 @@ const CompeletShipment = ({completeModel , setCompleteModel, compeletShipment}) 
         <div className='relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg'>
           <div className='flex justify-end'>
             <button className='p-2 text-gray-400 rounded-md hover:bg-gray-400' onClick={() => setCompleteModel(false)}>
-              {/* SVG */}
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                onClick={() => setCompleteModel(false)}
+              >
+                <path d="M12 6 L6 12 M6 6 L12 12" />
+              </svg>
             </button>
           </div>
           <div className='max-w-sm mx-auto py-3 space-y-3 text-center'>
