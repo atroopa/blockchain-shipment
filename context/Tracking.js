@@ -99,38 +99,35 @@ export const TrackingProvider = ({ children }) => {
 
 
         const compeletShipment = async compeletShip => {
-            console.log("compeletShip: " , compeletShip);
-    
-            const {receiver, index} = compeletShip;
-    
+            console.log("compeletShip: ", compeletShip);
+        
+            const { receiver, index } = compeletShip;
+        
             try {
-                
-                if(!window.ethereum) return "Install MetaMask";
-    
-                //const accounts      = await window.ethereum.request({ method: "eth_accounts", });
-                const accounts      = Blockchain.ganacheAddress;
-                const web3Modal     = new Web3Modal();
-                const connection    = await web3Modal.connect();
-                //const provider      = new ethers.providers.Web3Provider(connection);
-                const provider       = new ethers.providers.JsonRpcProvider(Blockchain.API_URL);
-                const signer        = provider.getSigner();
-                const contract      = fetchContract(signer);
-                const transaction   = await contract.compeletShipment(
-                                                                        accounts,
-                                                                        receiver,
-                                                                        index,
-                                                                        {
-                                                                            gasLimit: 30000
-                                                                        }
-                                                                    );
-    
-    
-                transaction.wait();
+                // const accounts = await window.ethereum.request({ method: "eth_accounts" });
+                const accounts = Blockchain.ganacheAddress; // Replace with your desired address
+        
+                const web3Modal = new Web3Modal();
+                const connection = await web3Modal.connect();
+        
+                const provider = new ethers.providers.JsonRpcProvider(Blockchain.API_URL);
+                const signer = provider.getSigner();
+                const contract = fetchContract(signer);
+        
+                const transaction = await contract.compeleteShipmnet(
+                    accounts, // Use the desired address from the accounts array
+                    receiver,
+                    index,
+                    {
+                        gasLimit: 500000
+                    }
+                );
+        
+                await transaction.wait();
                 console.log("transaction: ", transaction);
             } catch (error) {
-                console.error("Wrong compeleteShipment");
+                console.log(error);
             }
-    
         };
 
 
