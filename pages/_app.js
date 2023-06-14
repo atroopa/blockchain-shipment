@@ -18,8 +18,6 @@ import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum, goerli } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
-import merge from 'lodash.merge';
-import { Theme } from '@rainbow-me/rainbowkit';
 
 const myCustomTheme = {
   blurs: {

@@ -104,6 +104,7 @@ export const TrackingProvider = ({ children }) => {
             const { receiver, index } = compeletShip;
         
             try {
+                if (!window.ethereum) return "Install MetaMask";
                 // const accounts = await window.ethereum.request({ method: "eth_accounts" });
                 const accounts = Blockchain.ganacheAddress; // Replace with your desired address
         

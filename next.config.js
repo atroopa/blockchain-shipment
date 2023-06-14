@@ -1,6 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-}
-
-module.exports = nextConfig
+  webpackDevMiddleware: (config) => {
+    config.watchOptions = {
+      poll: 1000, // هر ثانیه یکبار تغییرات را بررسی کنید
+      aggregateTimeout: 300, // بعد از 300 میلی‌ثانیه تغییرات را اعمال کنید
+    };
+    return config;
+  },
+};
