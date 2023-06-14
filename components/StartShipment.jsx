@@ -1,5 +1,4 @@
 import {useState} from 'react'
-import { Str1 } from '@/components/index';
 
 const StartShipment = ({
   startModal,
